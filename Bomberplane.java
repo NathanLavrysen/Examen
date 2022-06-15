@@ -1,5 +1,7 @@
 package Examen;
 
+import java.io.FileWriter;
+
 public class Bomberplane extends Plane {
 	int aantalBommen;
 
@@ -14,7 +16,10 @@ public class Bomberplane extends Plane {
 	if (vluchtHoogteBommen < this.vluchtplafond * 0.2) {
 		throw new VluchtPlafondException("Vliegtuig vliegt te laag");
 	} else {
-		System.out.println(vluchtHoogteBommen);	
+		System.out.println(vluchtHoogteBommen);
+		FileWriter schrijf = new FileWriter("output.txt", true);
+		schrijf.write(vluchtHoogteBommen);
+		schrijf.close();
 	}
 }
 
